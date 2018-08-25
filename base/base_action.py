@@ -10,9 +10,9 @@ class BaseAction:
     #     return self.driver.find_element(location[0],location[1])
 
     def find_element(self, location, timeout=10.0, poll=1.0):
-        WebDriverWait(self.driver, timeout, poll).until(lambda x: x.find_element(location[0], location[1]))
+        return WebDriverWait(self.driver, timeout, poll).until(lambda x: x.find_element(location[0], location[1]))
     def find_elements(self, location, timeout=10.0, poll=1.0):
-        WebDriverWait(self.driver, timeout, poll).until(lambda x: x.find_elements(location[0], location[1]))
+        return WebDriverWait(self.driver, timeout, poll).until(lambda x: x.find_elements(location[0], location[1]))
 
     def click(self,location):
         self.find_element(location).click()
